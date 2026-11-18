@@ -4,6 +4,7 @@ import { PLASMIC } from "@/plasmic-init";
 PLASMIC.registerComponent(Hero, {
     name: "Hero",
     displayName: "Hero",
+    importPath: "@/components/sections/Hero.tsx",
     props: {
         title: {
             type: "string",
