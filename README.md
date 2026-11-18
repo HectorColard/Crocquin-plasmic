@@ -16,6 +16,19 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Plasmic code components
+
+With the development server running, open
+[http://localhost:3000/plasmic-host](http://localhost:3000/plasmic-host) to
+check the app host. In Plasmic Studio, open the project menu, select
+**Configure project**, and set the app host URL to that address. Reload the
+project; registered components appear in the Components tab or the blue plus
+menu. For a deployed host, use its publicly accessible `/plasmic-host` URL instead.
+
+Register components in `src/plasmic-init-client.tsx`. Currently, `Hero` and
+`PlasmicTest` are registered; other components need their own registration to
+appear in Studio.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
