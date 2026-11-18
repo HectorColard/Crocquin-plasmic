@@ -9,7 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@plasmicapp/cli": "^0.1.386",
     "@plasmicapp/loader-nextjs": "^2.0.31",
+    "@plasmicapp/react-web": "^1.0.44",
+    "@plasmicpkgs/plasmic-nav": "^0.0.234",
+    "@plasmicpkgs/react-aria": "^0.0.202",
     "next": "16.4.6",
     "react": "19.3.0",
     "react-dom": "19.3.0"
