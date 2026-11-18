@@ -24,11 +24,11 @@ export function Navbar() {
                 <a href="#methodes" onClick={() => setMenuOpen(false)}>
                     Méthodes
                 </a>
-                <a href="#temoignages" onClick={() => setMenuOpen(false)}>
-                    Ma pratique
-                </a>
                 <a href="#tarifications" onClick={() => setMenuOpen(false)}>
                     Tarifications
+                </a>
+                <a href="#contact" onClick={() => setMenuOpen(false)}>
+                    Contact
                 </a>
             </div>
         </nav>
