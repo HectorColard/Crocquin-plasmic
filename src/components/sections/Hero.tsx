@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 type HeroProps = {
     title?: string;
     subtitle?: string;
@@ -36,10 +34,10 @@ export function Hero({
             <picture className="energy-mark">
                 <source
                     media="(max-width: 699px)"
-                    srcSet={`/assets/onde-mini.svg`}
+                    srcSet={`/assets/onde-mini.png`}
                 />
-                <Image
-                    src={`/assets/onde.svg`}
+                <img
+                    src={`/assets/onde.png`}
                     alt="onde"
                     width={500}
                     height={500}

@@ -2,8 +2,6 @@
 
 import { PlasmicRootProvider } from "@plasmicapp/loader-nextjs";
 import { PLASMIC } from "@/plasmic-init";
-import { Hero } from "@/components/sections/Hero";
-import { Presentation } from "@/components/sections/Presentation";
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
