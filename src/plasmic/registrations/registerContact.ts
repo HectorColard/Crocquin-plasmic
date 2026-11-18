@@ -5,7 +5,7 @@ PLASMIC.registerComponent(Contact, {
     name: "Contact",
     displayName: "Contact",
     description: "Section de contact avec formulaire et coordonnées.",
-
+    importPath: "@/components/sections/Contact.tsx",
     props: {
         heading: {
             type: "object",
@@ -22,12 +22,10 @@ PLASMIC.registerComponent(Contact, {
                 },
             },
         },
-
         email: {
             type: "string",
             displayName: "Email",
         },
-
         phone: {
             type: "string",
             displayName: "Téléphone",

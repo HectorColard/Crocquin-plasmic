@@ -4,8 +4,8 @@ import { Method } from "@/components/sections/Method";
 PLASMIC.registerComponent(Method, {
     name: "Method",
     displayName: "Méthodes",
+    importPath: "@/components/sections/Method.tsx",
     description: "Présente les différentes modalités des séances.",
-
     props: {
         heading: {
             type: "object",
@@ -22,7 +22,6 @@ PLASMIC.registerComponent(Method, {
                 },
             },
         },
-
         services: {
             type: "array",
             displayName: "Prestations",
@@ -55,7 +54,6 @@ PLASMIC.registerComponent(Method, {
                 },
             },
         },
-
         footnotes: {
             type: "array",
             displayName: "Notes et précisions",
