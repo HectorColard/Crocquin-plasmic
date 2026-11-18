@@ -1,6 +1,9 @@
 "use client";
 
-import { PlasmicRootProvider } from "@plasmicapp/loader-nextjs";
+import {
+    PlasmicComponent,
+    PlasmicRootProvider,
+} from "@plasmicapp/loader-nextjs";
 import { PLASMIC } from "@/plasmic-init";
 
 // You can register any code components that you want to use here; see
@@ -24,6 +27,8 @@ export function ClientPlasmicRootProvider(
     props: Omit<React.ComponentProps<typeof PlasmicRootProvider>, "loader">,
 ) {
     return (
-        <PlasmicRootProvider loader={PLASMIC} {...props}></PlasmicRootProvider>
+        <PlasmicRootProvider loader={PLASMIC} {...props}>
+            <PlasmicComponent component="Homepage" />
+        </PlasmicRootProvider>
     );
 }
