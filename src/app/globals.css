@@ -34,6 +34,7 @@
   font-family: "Manrope:Medium", sans-serif;
   font-synthesis: none;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 @layer base {
@@ -42,7 +43,6 @@
     max-width: 100vw;
     min-height: 100vh;
     background: #edefdb;
-    overflow-x: hidden;
   }
 
   h1,
