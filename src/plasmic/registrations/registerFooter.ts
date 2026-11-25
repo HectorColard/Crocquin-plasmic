@@ -19,7 +19,6 @@ PLASMIC.registerComponent(Footer, {
                 description: {
                     type: "string",
                     displayName: "Description",
-                    control: "large",
                 },
             },
         },

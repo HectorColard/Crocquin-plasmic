@@ -253,6 +253,10 @@
   color: #7a7a7a;
 }
 
+.italic {
+  font-size: "14px";
+}
+
 .botanical {
   overflow: hidden;
   border-radius: 24px;

@@ -18,7 +18,6 @@ PLASMIC.registerComponent(Method, {
                 description: {
                     type: "string",
                     displayName: "Description",
-                    control: "large",
                 },
             },
         },
@@ -35,7 +34,6 @@ PLASMIC.registerComponent(Method, {
                     description: {
                         type: "string",
                         displayName: "Description",
-                        control: "large",
                     },
                     icon: {
                         type: "object",
@@ -63,7 +61,6 @@ PLASMIC.registerComponent(Method, {
                     text: {
                         type: "string",
                         displayName: "Texte",
-                        control: "large",
                     },
                 },
             },

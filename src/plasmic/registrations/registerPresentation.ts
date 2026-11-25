@@ -8,10 +8,6 @@ PLASMIC.registerComponent(Presentation, {
     description:
         "Section présentant le magnétisme et le parcours de Catherine.",
     props: {
-        title: {
-            type: "string",
-            displayName: "Titre de la section",
-        },
         content: {
             type: "object",
             displayName: "Contenu",
@@ -33,15 +29,13 @@ PLASMIC.registerComponent(Presentation, {
                                     text: {
                                         type: "string",
                                         displayName: "Texte",
-                                        control: "large",
                                     },
+                                    italic: {
+                                        type: "boolean",
+                                        displayName: "Texte italique",
+                                    }
                                 },
                             },
-                        },
-                        introduction: {
-                            type: "string",
-                            displayName: "Introduction",
-                            control: "large",
                         },
                         points: {
                             type: "array",
@@ -52,7 +46,6 @@ PLASMIC.registerComponent(Presentation, {
                                     text: {
                                         type: "string",
                                         displayName: "Texte",
-                                        control: "large",
                                     },
                                 },
                             },
@@ -60,7 +53,6 @@ PLASMIC.registerComponent(Presentation, {
                         disclaimer: {
                             type: "string",
                             displayName: "Avertissement médical",
-                            control: "large",
                         },
                         image: {
                             type: "object",
@@ -95,7 +87,6 @@ PLASMIC.registerComponent(Presentation, {
                                     text: {
                                         type: "string",
                                         displayName: "Texte",
-                                        control: "large",
                                     },
                                     muted: {
                                         type: "boolean",

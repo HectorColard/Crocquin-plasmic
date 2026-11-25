@@ -1,7 +1,4 @@
-import Image from "next/image";
-
 type PresentationProps = {
-    title?: string;
     content?: PresentationContent;
 };
 
@@ -10,8 +7,8 @@ type PresentationContent = {
         title: string;
         paragraphs: {
             text: string;
+            italic?: boolean
         }[];
-        introduction: string;
         points: {
             text: string;
         }[];
@@ -35,7 +32,6 @@ type PresentationContent = {
 };
 
 const defaultProps: Required<PresentationProps> = {
-    title: "Présentation",
     content: {
         magnetism: {
             title: "Le magnétisme",
@@ -46,9 +42,10 @@ const defaultProps: Required<PresentationProps> = {
                 {
                     text: "Il peut accompagner différentes situations et contribuer à apporter détente, apaisement et mieux-être.",
                 },
+                {
+                    text: "Les séances peuvent notamment être proposées pour accompagner :"
+                }
             ],
-            introduction:
-                "Les séances peuvent notamment être proposées pour accompagner :",
             points: [
                 {
                     text: "les troubles du sommeil et les difficultés à retrouver un sommeil apaisé ;",
@@ -90,7 +87,6 @@ const defaultProps: Required<PresentationProps> = {
 };
 
 export function Presentation({
-    title = defaultProps.title,
     content = defaultProps.content,
 }: PresentationProps) {
     return (
@@ -99,9 +95,13 @@ export function Presentation({
                 <div className="magnetism">
                     <h2>{content.magnetism.title}</h2>
                     {content.magnetism.paragraphs.map((paragraph, index) => (
-                        <p key={index}>{paragraph.text}</p>
+                        <p
+                            key={index}
+                            className={paragraph.italic ? "muted": ""}
+                        >
+                            {paragraph.italic ? <em>{paragraph.text}</em> : paragraph.text}
+                        </p>
                     ))}
-                    <p>{content.magnetism.introduction}</p>
                     <ul>
                         {content.magnetism.points.map((point, index) => (
                             <li key={index}>{point.text}</li>

@@ -18,7 +18,6 @@ PLASMIC.registerComponent(Contact, {
                 description: {
                     type: "string",
                     displayName: "Description",
-                    control: "large",
                 },
             },
         },

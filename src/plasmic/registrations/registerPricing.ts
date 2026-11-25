@@ -18,7 +18,6 @@ PLASMIC.registerComponent(Pricing, {
                 description: {
                     type: "string",
                     displayName: "Description",
-                    control: "large",
                 },
             },
         },
@@ -35,7 +34,6 @@ PLASMIC.registerComponent(Pricing, {
                     description: {
                         type: "string",
                         displayName: "Description",
-                        control: "large",
                     },
                     price: {
                         type: "string",
