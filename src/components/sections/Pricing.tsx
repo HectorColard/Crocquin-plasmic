@@ -1,5 +1,8 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { PriceCard } from "@/components/ui/PriceCard";
+import {
+    PriceCard,
+    type PriceCardProps
+} from "@/components/ui/PriceCard";
 import { Pagination } from "@/lib/Pagination";
 
 type PricingProps = {
@@ -7,14 +10,10 @@ type PricingProps = {
         title: string;
         description: string;
     };
-    prices?: {
-        title: string;
-        description: string;
-        price: string;
-    }[];
+    prices?: PriceCardProps[];
 };
 
-const prices = [
+const prices: PriceCardProps[] = [
     {
         title: "Séance adulte",
         description: "Séance de magnétisme pour adulte",
@@ -50,8 +49,8 @@ export function Pricing({
                 {heading.description}
             </SectionHeading>
             <div className="card-row scroll-row">
-                {prices.map((item) => (
-                    <PriceCard key={item.title} item={item} />
+                {prices.map((item, index) => (
+                    <PriceCard key={`${item.title}-${index}`} item={item} />
                 ))}
             </div>
             <Pagination count={prices.length} />
