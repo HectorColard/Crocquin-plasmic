@@ -57,8 +57,8 @@ export function ContactForm() {
                 </label>
 
                 <label className="desktop-only-field">
-                    Prénom
-                    <input name="firstName" placeholder="Votre prénom" />
+                    Prénom *
+                    <input name="firstName" placeholder="Votre prénom" required />
                 </label>
 
                 <label>

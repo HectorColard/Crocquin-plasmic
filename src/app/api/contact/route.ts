@@ -47,10 +47,10 @@ export async function POST(request: Request) {
         });
 
         await transporter.sendMail({
-            from: `SITE MAGNETISME : Nouveau message de ${name.trim()} <${process.env.GMAIL_USER}>`,
+            from: `SITE MAGNETISME : Nouveau message de ${firstName?.trim() || ""} ${name.trim()} <${process.env.GMAIL_USER}>`,
             to: process.env.CONTACT_EMAIL,
             replyTo: email.trim(),
-            subject: `Nouveau message de ${name.trim()}`,
+            subject: `SITE MAGNETISME : Nouveau message de ${firstName?.trim() || ""} ${name.trim()}`,
             text: `
                 Nom : ${name.trim()}
                 Prénom : ${firstName?.trim() || "Non renseigné"}
