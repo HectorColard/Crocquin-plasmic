@@ -1,23 +1,34 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
     try {
         const { name, firstName, email, phone, message } = await request.json();
 
-        // Basic validation
         if (
             typeof name !== "string" ||
             typeof email !== "string" ||
             typeof message !== "string" ||
+            (typeof firstName !== "undefined" &&
+                typeof firstName !== "string") ||
+            (typeof phone !== "undefined" && typeof phone !== "string")
+        ) {
+            return NextResponse.json(
+                { error: "Données invalides." },
+                { status: 400 },
+            );
+        }
+
+        if (
             !name.trim() ||
             !email.trim() ||
             !message.trim() ||
             name.length > 100 ||
             email.length > 254 ||
-            message.length > 5000
+            message.length > 5000 ||
+            (firstName !== undefined && firstName.length > 100) ||
+            (phone !== undefined && phone.length > 30) ||
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
         ) {
             return NextResponse.json(
                 { error: "Veuillez vérifier les champs du formulaire." },
@@ -25,36 +36,38 @@ export async function POST(request: Request) {
             );
         }
 
-        const { data, error } = await resend.emails.send({
-            from: `Site magnétisme : Nouvelle prise de contact de ${name.trim()} <${process.env.EMAIL_FROM!}>`,
-            to: process.env.EMAIL_CONTACT!,
+        const transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 465,
+            secure: true,
+            auth: {
+                user: process.env.GMAIL_USER,
+                pass: process.env.GMAIL_APP_PASSWORD,
+            },
+        });
+
+        await transporter.sendMail({
+            from: `SITE MAGNETISME : Nouveau message de ${name.trim()} <${process.env.GMAIL_USER}>`,
+            to: process.env.CONTACT_EMAIL,
             replyTo: email.trim(),
             subject: `Nouveau message de ${name.trim()}`,
             text: `
-                Nom : ${name}
-                Prénom : ${firstName || "Non renseigné"}
-                Email : ${email}
-                Téléphone : ${phone || "Non renseigné"}
+                Nom : ${name.trim()}
+                Prénom : ${firstName?.trim() || "Non renseigné"}
+                Email : ${email.trim()}
+                Téléphone : ${phone?.trim() || "Non renseigné"}
 
                 Message :
-                ${message}
+                ${message.trim()}
             `,
         });
 
-        if (error) {
-            console.error("Resend error:", error);
-
-            return NextResponse.json(
-                { error: "Impossible d'envoyer le message." },
-                { status: 500 },
-            );
-        }
-
-        return NextResponse.json({ success: true, id: data?.id });
+        return NextResponse.json({ success: true });
     } catch (error) {
         console.error("Contact form error:", error);
+
         return NextResponse.json(
-            { error: "Une erreur est survenue." },
+            { error: "Impossible d'envoyer le message." },
             { status: 500 },
         );
     }
