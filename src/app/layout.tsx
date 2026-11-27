@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
     metadataBase: SITE_URL,
-    title: "Magnétiseuse à Saint-Ouen-l’Aumône | Catherine Lajudie-Rocquin",
+    title: "Magnétiseuse Val d'oise | Catherine Lajudie-Rocquin",
     description:
-        "Magnétiseuse à Saint-Ouen-l’Aumône, Catherine Lajudie-Rocquin propose des séances, à distance et au cabinet, proche pontoise à Saint-Ouen-l’Aumône.",
+        "Magnétiseuse Val d'oise, Catherine Lajudie-Rocquin propose des séances, à distance et au cabinet Val d'oise.",
     alternates: {
         canonical: "/",
     },
@@ -30,16 +30,16 @@ export const metadata: Metadata = {
         locale: "fr_FR",
         url: "/",
         siteName:
-            "Catherine Lajudie-Rocquin - Magnétiseuse à Saint-Ouen-l’Aumône",
-        title: "Magnétiseuse à Saint-Ouen-l’Aumône | Catherine Lajudie-Rocquin",
+            "Catherine Lajudie-Rocquin - Magnétiseuse Val d'oise",
+        title: "Magnétiseuse Val d'oise | Catherine Lajudie-Rocquin",
         description:
-            "Séances de magnétisme, au cabinet, à saint-ouen-l'aumône ou à distance, proche pontoise.",
+            "Séances de magnétisme, au cabinet, dans le Val d'Oise ou à distance.",
     },
     twitter: {
         card: "summary",
-        title: "Magnétiseuse à Saint-Ouen-l’Aumône | Catherine Lajudie-Rocquin",
+        title: "Magnétiseuse Val d'oise | Catherine Lajudie-Rocquin",
         description:
-            "Séances de magnétisme, au cabinet, à saint-ouen-l'aumône ou à distance, proche pontoise.",
+            "Séances de magnétisme, au cabinet, dans le Val d'Oise ou à distance.",
     },
 };
 
